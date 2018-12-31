@@ -1,0 +1,23 @@
+{
+  "name": "SignalRChat",
+  "version": "1.0.0",
+  "description": "It is a real-time application using Asp.net Core, Bootstrap, MVC 5, JQuery, SignalR, Razor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devfernandoaraujo/SignalRChat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devfernandoaraujo/SignalRChat/issues"
+  },
+  "homepage": "https://github.com/devfernandoaraujo/SignalRChat#readme",
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.0"
+  }
+}

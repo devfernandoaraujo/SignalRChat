@@ -3,20 +3,37 @@
     ViewData["Title"] = "Let's talk";
 }
 
+@section Scripts{
+    <!--Load the signalr script client-->
+    <script src="~/lib/signalr/signalr.js"></script>
+    <!--Signalr client methods-->
+    <script src="~/js/clientConnection.js"></script>
+    <!--Page functions-->
+    <script src="~/js/home/home.js"></script>
+
+}
 
 <section class="container">
     <div class="pb-3 row">
         <div class="col">
-            <textarea type="text" class="rounded md-textarea form-control" readonly rows="10"></textarea>
+            <textarea id="listMessages" type="text" class="rounded md-textarea form-control" readonly rows="8"></textarea>
         </div>
     </div>
     <form>
         <div class="form-group">
-            <label> Type your message</label>
-            <input type="text" class="form-control" placeholder="Write your message here" />
+            <label> Your name</label>
+            <div class="row">
+                <div class="col-4">
+                    <input type="text" id="userName" class="form-control" placeholder="Write your name hire" />
+                </div>
+            </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <label> Type your message</label>
+            <input type="text" id="txtMessage" class="form-control" placeholder="Write your message here" />
+        </div>
+        <div class="form-group">
+            <a href="#" id="btnSendMessage" class="btn btn-primary">Send</a>
         </div>
     </form>
 </section>

@@ -40,10 +40,21 @@ namespace SignalRChat
             services.AddSingleton<FeatureToggles>(x => new FeatureToggles
             {
                 EnableDeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:EnableDeveloperExceptions")
-            }); 
+            });
 
             //Enabling MVC
             services.AddMvc();
+
+            //Enabling the connection cross-domain
+            services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
+            {
+                builder.AllowAnyMethod().AllowAnyHeader()
+                        .WithOrigins("https://localhost:44341")
+                        .AllowCredentials();
+            }));
+
+            //Enabling SignalR
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +75,15 @@ namespace SignalRChat
             //Enabling the use of static files
             app.UseStaticFiles();
 
+            //Using Cors
+            app.UseCors("CorsPolicy");
+
+            //Using Hub
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<MessageHub>($"/messagehub");
+            });
+
             //Using MVC
             app.UseMvc(routes =>
             {
@@ -71,6 +91,7 @@ namespace SignalRChat
                     "{controller=Home}/{action=Index}/{id?}");
             });
 
+            
             app.UseFileServer();
         }
     }
