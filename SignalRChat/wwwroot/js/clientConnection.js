@@ -6,6 +6,13 @@ const connection = new signalR.HubConnectionBuilder()
     .configureLogging(signalR.LogLevel.Information)
     .build();
 
+/**
+ *Summary. Provide all functionalities to connect clients to server
+ *Description. All messages sent by the user or received from the server are managed throught the functions on this class  
+ *@acess public
+ *@author Fernando M Araujo
+ *@since 01/01/2019
+ */
 class ClientConnection {
 
     /**

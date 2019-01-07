@@ -4,3 +4,7 @@
     border-radius: 40% !important;
 }
 
+/*Alert image that is showed on popup messages on role web site*/
+.imgModalAlert {
+    content: url('/images/alert.png');
+}

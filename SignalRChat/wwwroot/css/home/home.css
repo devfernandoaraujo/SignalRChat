@@ -1,0 +1,28 @@
+﻿/*Layout of the page*/
+body {
+    font-size: 20px;
+    font-family: Courier, monospace;
+    height: 2rem;
+    font-weight: bold;
+}
+
+/*Layout of textarea where the messages are saved*/
+.prompt-messages {
+    overflow: hidden;
+    font-family: 'Courier New',monospace;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    
+}
+
+/*Bacground of textarea where the messages are saved*/
+.bg-image-paper {
+    background-image: url('/images/lines.png'),url('/images/paper.png');
+    background-repeat: repeat-y, repeat;
+}
+
+/*Specific class to show border only on the bottom of an element*/
+.border-bottom-3 {
+    border-bottom: 0.3rem solid !important;
+}
+

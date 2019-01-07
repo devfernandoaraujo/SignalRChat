@@ -1,3 +1,6 @@
+/**
+ *Description. Class provided by Microsoft in order to connect javaScript clients with the Hub services using SignalR 
+ */ 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
